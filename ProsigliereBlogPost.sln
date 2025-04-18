@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36015.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProsigliereBlogPost.Api", "ProsigliereBlogPost.Api\ProsigliereBlogPost.Api.csproj", "{617A6CEB-BAA7-4B69-AAEA-A3BF54F9F91C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{617A6CEB-BAA7-4B69-AAEA-A3BF54F9F91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617A6CEB-BAA7-4B69-AAEA-A3BF54F9F91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617A6CEB-BAA7-4B69-AAEA-A3BF54F9F91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617A6CEB-BAA7-4B69-AAEA-A3BF54F9F91C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33B9AB87-9E4C-41DD-8EFC-D9691B346A35}
+	EndGlobalSection
+EndGlobal
