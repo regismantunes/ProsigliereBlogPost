@@ -17,7 +17,6 @@
 *.ncb
 *.sdf
 *.ipch
-*.db
 *.opendb
 *.suo
 *.user
