@@ -1,11 +1,12 @@
-﻿using ProsigliereBlogPost.Api.Data.Dto;
+﻿using Microsoft.AspNetCore.Mvc;
+using ProsigliereBlogPost.Api.Data.Dto;
 using ProsigliereBlogPost.Api.Services.Interfaces;
 
 namespace ProsigliereBlogPost.Api.Routes
 {
     internal static class BlogPostMap
     {
-        public static void MapBlogPostRoutes(this IEndpointRouteBuilder app)
+        public static IEndpointRouteBuilder MapBlogPostRoutes(this IEndpointRouteBuilder app)
         {
             var group = app.MapGroup("/posts");
 
@@ -21,13 +22,13 @@ namespace ProsigliereBlogPost.Api.Routes
                 return blogPost is not null ? Results.Ok(blogPost) : Results.NotFound();
             });
 
-            group.MapPost(string.Empty, async (BlogPost blogPost, IBlogPostService blogPostService) =>
+            group.MapPost(string.Empty, async ([FromBody] BlogPost blogPost, IBlogPostService blogPostService) =>
             {
                 var createdId = await blogPostService.CreateAsync(blogPost);
-                return Results.Created($"/posts/{createdId}", createdId);
+                return Results.Created($"/posts/{createdId}", new { Id = createdId });
             });
 
-            group.MapCommentRoutes();
+            return app;
         }
     }
 }

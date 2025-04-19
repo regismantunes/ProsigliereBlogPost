@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.ComponentModel.DataAnnotations;
 using ProsigliereBlogPost.Api.Extensions;
+using ProsigliereBlogPost.Api.Exceptions;
 
 namespace ProsigliereBlogPost.Api.Middlewares
 {
@@ -15,6 +16,10 @@ namespace ProsigliereBlogPost.Api.Middlewares
             catch (ValidationException ex)
             {
                 await context.Response.SendErrorMessageAsync(HttpStatusCode.BadRequest, ex.Message);
+            }
+            catch (NotFoundException ex)
+            {
+                await context.Response.SendErrorMessageAsync(HttpStatusCode.NotFound, ex.Message);
             }
             catch (Exception ex)
             {

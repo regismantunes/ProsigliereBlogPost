@@ -3,7 +3,7 @@
     public readonly record struct BlogPost(
         int Id, 
         string Title, 
-        string Content,
+        string? Content,
         int CommentsCount,
         IEnumerable<Comment>? Comments
         );

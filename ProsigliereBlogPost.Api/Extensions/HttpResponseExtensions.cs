@@ -1,5 +1,4 @@
-﻿using ProsigliereBlogPost.Api.Data.Dto;
-using System.Net;
+﻿using System.Net;
 using System.Text.Json;
 
 namespace ProsigliereBlogPost.Api.Extensions
@@ -10,9 +9,8 @@ namespace ProsigliereBlogPost.Api.Extensions
         {
             response.ContentType = "application/json";
             response.StatusCode = (int)httpStatus;
-
-            var responseDto = new ErrorMessage(message);
-            await response.WriteAsync(JsonSerializer.Serialize(responseDto));
+            
+            await response.WriteAsync(JsonSerializer.Serialize(new { error = message }));
         }
     }
 }

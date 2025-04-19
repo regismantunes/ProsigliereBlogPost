@@ -8,7 +8,8 @@ builder.Services.AddOpenApi();
 builder
     .AddDatabaseComponents()
     .AddRepositories()
-    .AddServices();
+    .AddServices()
+    .ConfigureJsonResponse();
 
 var app = builder.BuildConfiguredApplication();
 

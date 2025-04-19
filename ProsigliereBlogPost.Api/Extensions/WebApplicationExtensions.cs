@@ -6,9 +6,9 @@ namespace ProsigliereBlogPost.Api.Extensions
     {
         public static void AddRoutes(this IEndpointRouteBuilder builder)
         {
-            var groupApi = builder.MapGroup("api");
-
-            groupApi.MapBlogPostRoutes();
+            builder.MapGroup("api")
+                .MapBlogPostRoutes()
+                .MapCommentRoutes();
         }
     }
 }

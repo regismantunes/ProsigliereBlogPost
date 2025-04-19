@@ -12,9 +12,15 @@ namespace ProsigliereBlogPost.Api.Services
         {
             var list = await blogPostRepository
                 .GetAll()
+                .Select(x => new BlogPostDto
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    CommentsCount = x.CommentsCount
+                })
                 .ToListAsync();
 
-            return list.ToDto();
+            return list;
         }
 
         public async Task<BlogPostDto?> GetByIdAsync(int id)

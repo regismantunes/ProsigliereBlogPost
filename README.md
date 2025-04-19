@@ -35,8 +35,8 @@ Ensure you have the following installed:
 
 1.  Clone the repository to your local machine:
     ```bash
-    git clone <YOUR_GITHUB_REPOSITORY_URL>
-    cd <YOUR_REPOSITORY_NAME>
+    git clone https://github.com/regismantunes/ProsigliereBlogPost.git
+    cd ProsigliereBlogPost
     ```
 
 ### Configuration
@@ -89,9 +89,7 @@ Here's a description of the implemented API endpoints:
 * **Response (JSON) on Success (e.g., HTTP 201 Created):**
     ```json
     {
-      "id": 3,
-      "title": "My New Blog Post",
-      "content": "This is the content of my new blog post."
+      "id": 3
     }
     ```
 
@@ -109,12 +107,12 @@ Here's a description of the implemented API endpoints:
       "comments": [
         {
           "id": 1,
-		  "author": "Luke Skywalker",
+          "author": "Luke Skywalker",
           "content": "Great post!"
         },
         {
           "id": 2,
-		  "author": "Leia Organa",
+          "author": "Leia Organa",
           "content": "I agree."
         }
         // ... more comments
@@ -136,22 +134,20 @@ Here's a description of the implemented API endpoints:
 * **Request Body (JSON):**
     ```json
     {
-	  "author": "Darth Maul",
+      "author": "Darth Maul",
       "content": "This is a new comment."
     }
     ```
 * **Response (JSON) on Success (e.g., HTTP 201 Created):**
     ```json
     {
-      "id": 3,
-	  "author": "Darth Maul",
-      "content": "This is a new comment."
+      "id": 3
     }
     ```
 * **Response on Post Not Found (e.g., HTTP 404 Not Found):**
     ```json
     {
-      "error": "Not Found"
+      "error": "BlogPost with ID 3 not found."
     }
     ```
 
