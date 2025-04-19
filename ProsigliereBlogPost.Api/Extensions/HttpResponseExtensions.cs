@@ -11,7 +11,7 @@ namespace ProsigliereBlogPost.Api.Extensions
             response.ContentType = "application/json";
             response.StatusCode = (int)httpStatus;
 
-            var responseDto = new ErrorMessageDto(message);
+            var responseDto = new ErrorMessage(message);
             await response.WriteAsync(JsonSerializer.Serialize(responseDto));
         }
     }
