@@ -122,7 +122,7 @@ Here's a description of the implemented API endpoints:
 * **Response on Not Found (e.g., HTTP 404 Not Found):**
     ```json
     {
-      "error": "Not Found"
+      "error": "BlogPost with ID 1 not found."
     }
     ```
 

@@ -19,7 +19,7 @@ namespace ProsigliereBlogPost.Api.Routes
             group.MapGet("{id:int}", async (int id, IBlogPostService blogPostService) =>
             {
                 var blogPost = await blogPostService.GetByIdAsync(id);
-                return blogPost is not null ? Results.Ok(blogPost) : Results.NotFound();
+                return Results.Ok(blogPost);
             });
 
             group.MapPost(string.Empty, async ([FromBody] BlogPost blogPost, IBlogPostService blogPostService) =>

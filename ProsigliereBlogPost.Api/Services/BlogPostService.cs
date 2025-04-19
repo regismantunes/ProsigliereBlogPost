@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProsigliereBlogPost.Api.Data.DtoMap;
 using ProsigliereBlogPost.Api.Data.Repositories.Interfaces;
+using ProsigliereBlogPost.Api.Exceptions;
 using ProsigliereBlogPost.Api.Services.Interfaces;
 using BlogPostDto = ProsigliereBlogPost.Api.Data.Dto.BlogPost;
 
@@ -23,10 +24,14 @@ namespace ProsigliereBlogPost.Api.Services
             return list;
         }
 
-        public async Task<BlogPostDto?> GetByIdAsync(int id)
+        public async Task<BlogPostDto> GetByIdAsync(int id)
         {
             var entity = await blogPostRepository.GetByIdAsync(id);
-            return entity?.ToDto();
+
+            if (entity is null)
+                throw new BlogPostNotFoundException(id);
+
+            return entity.ToDto();
         }
 
         public async Task<int> CreateAsync(BlogPostDto blogPost)

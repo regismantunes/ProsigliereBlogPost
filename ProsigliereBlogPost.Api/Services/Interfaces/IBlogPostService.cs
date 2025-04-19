@@ -6,6 +6,6 @@ namespace ProsigliereBlogPost.Api.Services.Interfaces
     {
         Task<int> CreateAsync(BlogPost blogPost);
         Task<IEnumerable<BlogPost>> GetAllAsync();
-        Task<BlogPost?> GetByIdAsync(int id);
+        Task<BlogPost> GetByIdAsync(int id);
     }
 }
